@@ -32,4 +32,7 @@ app.use('/api/products', produitRouter);
 const categoryRouter = require('./routes/categoryRouter');
 app.use('/api/categories', categoryRouter);
 
+const loginRouter = require('./routes/LoginRouter');
+app.use('/api/user/login', loginRouter);
+
 app.listen(process.env.PORT, () => console.log('Le serveur démarre sur le port : ', process.env.PORT));
