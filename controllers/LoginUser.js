@@ -25,6 +25,7 @@ const login = (req, res) => {
 
                     let role = user.role
                     let id = user.id;
+                    let nom = user.pseudo;
 
                     // Création du jéton pour chaque user avec jwt
                     const jeton = jwt.sign(
@@ -40,7 +41,7 @@ const login = (req, res) => {
                         console.log(err)
                     })
 
-                    return res.json({ message, jeton, role, id })
+                    return res.json({ message, jeton, role, id, nom })
                 })
             }))
 
