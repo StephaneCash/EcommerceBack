@@ -34,6 +34,7 @@ db.sequelize = sequelize;
 db.users = require('./userModel.js')(sequelize, DataTypes);
 db.products = require('./productModel')(sequelize, DataTypes);
 db.categories = require('./categoryModel')(sequelize, DataTypes);
+db.commandes = require("./commandeModel")(sequelize, DataTypes);
 
 // Relation 1-N 
 
@@ -54,6 +55,15 @@ db.products.belongsTo(db.users, {
     foreignKey: 'userId',
     as: 'users'
 });
+
+db.users.hasMany(db.commandes, {
+    as: "commandes"
+});
+
+db.commandes.belongsTo(db.users, {
+    foreignKey: 'userId',
+    as: 'users'
+})
 
 db.sequelize.sync({ force: false })
     .then(() => {
