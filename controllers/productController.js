@@ -49,6 +49,7 @@ const productCreate = async (req, res) => {
                         price: price,
                         qty: qty,
                         image: "./images/" + req.file.originalname,
+                        photoAdmin: "../src/AdminEcommerce/frontend/public/images/" + req.file.originalname,
                         rating: rating,
                         userId: req.body.userId,
                         categoryId: req.body.categoryId
@@ -147,6 +148,7 @@ const updateProduct = (req, res) => {
                 price: price,
                 qty: qty,
                 image: "./images/" + req.file.originalname,
+                photoAdmin: "../src/AdminEcommerce/frontend/public/images/" + req.file.originalname,
                 rating: rating,
                 userId: req.body.userId,
                 categoryId: req.body.categoryId
