@@ -32,6 +32,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         image: {
             type: DataTypes.STRING,
+        },
+        photoAdmin: {
+            type: DataTypes.STRING,
         }
     })
 
